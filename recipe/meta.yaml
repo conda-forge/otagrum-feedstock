@@ -11,10 +11,10 @@ source:
 
   # Use git waiting for the 0.2 release
   git_url: https://github.com/openturns/otagrum.git
-  git_rev: d1a6f713c5b19822af7d00b9013fd4a5c5c2ac3e
+  git_rev: 8ef711327cca94c4bb79cd78d36c2d3708095d69
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -38,7 +38,7 @@ test:
 
 about:
   home: http://openturns.org/
-  license: GPL3
+  license: LGPL3
   license_file: COPYING
   summary: OT/aGrUM module
 
