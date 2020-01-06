@@ -11,10 +11,10 @@ source:
 
   # Use git waiting for the 0.2 release
   git_url: https://github.com/openturns/otagrum.git
-  git_rev: 90e2f4f12ec50e0f4f4d00d50fc50e635bfcba99
+  git_rev: dd73d388c95adef9b2eeb72b16b3905c08164ad4
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win]
 
 requirements:
