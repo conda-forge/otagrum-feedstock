@@ -5,31 +5,28 @@ package:
   version: {{ version }}
 
 source:
-  #fn: otagrum-{{ version }}.tar.gz
-  #url: https://github.com/openturns/otagrum/archive/v{{ version }}.tar.gz
-  #sha256: 853eff2e7ff59a03424c9b03bf9d508c59ccde668cc056a7da312170475bc30c
-
-  # Use git waiting for the 0.2 release
-  git_url: https://github.com/openturns/otagrum.git
-  git_rev: dd73d388c95adef9b2eeb72b16b3905c08164ad4
+  fn: otagrum-{{ version }}.tar.gz
+  url: https://github.com/openturns/otagrum/archive/v{{ version }}.tar.gz
+  sha256: dc0951152b6afd27064c508346f6e040a84df0c9da564a6e977f262a87dc3438
 
 build:
-  number: 5
-  skip: true  # [win]
+  number: 6
+  run_exports:
+    - {{ pin_subpackage('otagrum', max_pin='x.x') }}
 
 requirements:
   build:
-    - cmake  # [not win]
-    - swig  # [not win]
-    - {{ compiler('c') }}  # [not win]
-    - {{ compiler('cxx') }}  # [not win]
+    - cmake
+    - swig
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   host:
     - python
-    - openturns  # [not win]
-    - pyagrum  # [not win]
+    - openturns 1.15*
+    - pyagrum
   run:
     - python
-    - openturns
+    - openturns 1.15*
     - pyagrum
 
 test:
@@ -38,8 +35,9 @@ test:
 
 about:
   home: http://openturns.org/
-  license: LGPL3
-  license_file: COPYING
+  license: LGPL-3.0-or-later
+  license_family: LGPL
+  license_file: COPYING.LESSER
   summary: OT/aGrUM module
 
 extra:
