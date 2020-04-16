@@ -22,11 +22,11 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
-    - openturns
+    - openturns 1.15*
     - pyagrum
   run:
     - python
-    - openturns
+    - openturns 1.15*
     - pyagrum
 
 test:
