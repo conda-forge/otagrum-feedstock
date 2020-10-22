@@ -1,4 +1,4 @@
-{% set version = "0.2" %}
+{% set version = "0.3" %}
 
 package:
   name: otagrum
@@ -7,10 +7,10 @@ package:
 source:
   fn: otagrum-{{ version }}.tar.gz
   url: https://github.com/openturns/otagrum/archive/v{{ version }}.tar.gz
-  sha256: dc0951152b6afd27064c508346f6e040a84df0c9da564a6e977f262a87dc3438
+  sha256: d910d7af50044c71a8994afece7b741aa72cb1c61fac9b5f7c3de3b251bcba6b
 
 build:
-  number: 7
+  number: 0
   run_exports:
     - {{ pin_subpackage('otagrum', max_pin='x.x') }}
 
@@ -23,11 +23,11 @@ requirements:
     - curl  # [win]
   host:
     - python
-    - openturns 1.15*
+    - openturns 1.16*
     - pyagrum
   run:
     - python
-    - openturns 1.15*
+    - openturns 1.16*
     - pyagrum
 
 test:
