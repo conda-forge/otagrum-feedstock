@@ -7,7 +7,7 @@ package:
 source:
   fn: otagrum-{{ version }}.tar.gz
   url: https://github.com/openturns/otagrum/archive/v{{ version }}.tar.gz
-  sha256: d910d7af50044c71a8994afece7b741aa72cb1c61fac9b5f7c3de3b251bcba6b
+  sha256: 98255bf771a752feaa414768085c78422665d10606fc488b2c864a14152c179d
 
 build:
   number: 1
