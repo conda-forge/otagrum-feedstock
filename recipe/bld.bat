@@ -1,8 +1,6 @@
-curl -fsSLO https://github.com/openturns/build-modules/releases/download/v1.16rc1/%PKG_NAME%-%PKG_VERSION%-py%PY_VER%-x86_64.exe
+curl -fsSLO https://github.com/openturns/build-modules/releases/download/v1.17rc1/%PKG_NAME%-%PKG_VERSION%-py%PY_VER%-x86_64.exe
 if errorlevel 1 exit 1
 
 %PKG_NAME%-%PKG_VERSION%-py%PY_VER%-x86_64.exe /userlevel=1 /S /FORCE /D=%PREFIX%
 if errorlevel 1 exit 1
 
-xcopy /y python\src\__init__.py %SP_DIR%\otagrum
-if errorlevel 1 exit 1
