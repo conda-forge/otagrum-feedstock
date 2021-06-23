@@ -10,7 +10,7 @@ source:
   sha256: 59ece6bbada835e575c6b09bbe600c9a3a37a6b07f86712d3eef65ea0b3b91a1
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('otagrum', max_pin='x.x') }}
 
@@ -29,6 +29,7 @@ requirements:
     - python
     - openturns 1.17*
     - pyagrum
+    - pyagrum 0.20.2  # [win]
 
 test:
   imports:
