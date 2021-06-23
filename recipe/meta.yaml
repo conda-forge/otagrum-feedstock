@@ -25,6 +25,7 @@ requirements:
     - python
     - openturns 1.17*
     - pyagrum
+    - pyagrum 0.20.2  # [win]
   run:
     - python
     - openturns 1.17*
