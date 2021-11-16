@@ -10,7 +10,7 @@ source:
   sha256: 63d40c8187339fbe1d8194721e2cac48b063c1a5d41c4d6e1829db4fa5acf72b
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('otagrum', max_pin='x.x') }}
 
