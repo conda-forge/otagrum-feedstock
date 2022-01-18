@@ -11,6 +11,7 @@ source:
 
 build:
   number: 1
+  skip: true  # [win and py310]
   run_exports:
     - {{ pin_subpackage('otagrum', max_pin='x.x') }}
 
