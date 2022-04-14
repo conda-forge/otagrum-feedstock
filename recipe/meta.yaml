@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [win and py>=310]
+  skip: true  # [py<38]
   run_exports:
     - {{ pin_subpackage('otagrum', max_pin='x.x') }}
 
@@ -25,14 +25,14 @@ requirements:
     - curl  # [win]
   host:
     - python
-    - openturns 1.18*
+    - openturns 1.19*
     - pyagrum
-    - pyagrum 0.22.2  # [win]
+    - pyagrum 0.22.9  # [win]
   run:
     - python
-    - openturns 1.18*
+    - openturns 1.19*
     - pyagrum
-    - pyagrum 0.22.2  # [win]
+    - pyagrum 0.22.9  # [win]
 
 test:
   imports:
