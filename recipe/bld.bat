@@ -3,3 +3,4 @@ if errorlevel 1 exit 1
 
 %PKG_NAME%-%PKG_VERSION%-py%PY_VER%-x86_64.exe /userlevel=1 /S /FORCE /D=%PREFIX%
 if errorlevel 1 exit 1
+
