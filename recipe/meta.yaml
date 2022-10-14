@@ -25,14 +25,14 @@ requirements:
     - curl  # [win]
   host:
     - python
-    - openturns 1.19*
+    - openturns 1.20*
     - pyagrum
-    - pyagrum 0.22.9  # [win]
+    - pyagrum 1.3.1  # [win]
   run:
     - python
-    - openturns 1.19*
+    - openturns 1.20*
     - pyagrum
-    - pyagrum 0.22.9  # [win]
+    - pyagrum 1.3.1  # [win]
 
 test:
   imports:
