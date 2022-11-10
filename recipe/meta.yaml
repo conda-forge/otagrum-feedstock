@@ -10,8 +10,7 @@ source:
   sha256: 1e96eef18d897347cf11c6786e8e91ba09ad1abbe9c77964070ddd560970621a
 
 build:
-  number: 1
-  skip: true  # [py<38]
+  number: 2
   run_exports:
     - {{ pin_subpackage('otagrum', max_pin='x.x') }}
 
