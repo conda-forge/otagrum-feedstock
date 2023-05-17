@@ -1,11 +1,11 @@
-About otagrum
-=============
+About otagrum-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/otagrum-feedstock/blob/main/LICENSE.txt)
 
 Home: http://openturns.org/
 
 Package license: LGPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/otagrum-feedstock/blob/main/LICENSE.txt)
 
 Summary: OT/aGrUM module
 
