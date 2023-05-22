@@ -5,6 +5,8 @@ mkdir build && cd build
 cmake \
   -DCMAKE_PREFIX_PATH=${PREFIX} \
   -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+  -DPython_FIND_STRATEGY=LOCATION \
+  -DPython_ROOT_DIR=${PREFIX} \
   ..
 
 make install -j${CPU_COUNT}
