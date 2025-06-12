@@ -31,12 +31,12 @@ requirements:
     - openturns
     - libcblas
     - pyagrum
-    - pyagrum 1.17.0  # [win]
+    - pyagrum 2.1.1  # [win]
   run:
     - python
     - openturns
     - pyagrum
-    - pyagrum 1.17.0  # [win]
+    - pyagrum 2.1.1  # [win]
 
 test:
   imports:
