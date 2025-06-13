@@ -7,10 +7,10 @@ package:
 source:
   fn: otagrum-{{ version }}.tar.gz
   url: https://github.com/openturns/otagrum/archive/v{{ version }}.tar.gz
-  sha256: 29d76e03ba4803d0429cb0eaa9b65601b6275cd5eaed90e242cc743e53b545c0
+  sha256: 329fbcca4fd903017147c32c9fc5f1db49c669141f6556b32a776fce26fd2b25
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py<310]
   run_exports:
     - {{ pin_subpackage('otagrum', max_pin='x.x') }}
