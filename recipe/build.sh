@@ -1,7 +1,13 @@
 #!/bin/sh
 
-# RuntimeError: std::bad_cast on osx in FromPotential
-sed -i'.bak' "s|dynamic_cast|static_cast|g" lib/src/Utils.cxx
+if test `uname` == "Darwin"; then
+  export CXXFLAGS="${CXXFLAGS} -fno-assume-unique-vtables"
+fi
+
+if [[ "${target_platform}" == osx-* ]]; then
+    # See https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
+    CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
+fi
 
 cmake ${CMAKE_ARGS} \
   -DCMAKE_PREFIX_PATH=${PREFIX} \
@@ -10,7 +16,7 @@ cmake ${CMAKE_ARGS} \
   -DCMAKE_UNITY_BUILD=ON \
   -DPython_FIND_STRATEGY=LOCATION \
   -DPython_ROOT_DIR=${PREFIX} \
-  -B build -S .
+  -B build .
 
 cmake --build build --target install --parallel ${CPU_COUNT}
 

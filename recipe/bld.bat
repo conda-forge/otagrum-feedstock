@@ -1,6 +1,16 @@
-curl -fsSLO https://github.com/openturns/build-modules/releases/download/v1.25/%PKG_NAME%-%PKG_VERSION%-py%PY_VER%-x86_64.exe
+
+cmake -LAH -G "Ninja" ^
+    -DCMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
+    -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
+    -DCMAKE_UNITY_BUILD=ON ^
+    -DPython_FIND_STRATEGY=LOCATION ^
+    -DPython_ROOT_DIR="%PREFIX%" ^
+    -DOTAGRUM_PYTHON_MODULE_PATH=../Lib/site-packages ^
+    -B build .
 if errorlevel 1 exit 1
 
-%PKG_NAME%-%PKG_VERSION%-py%PY_VER%-x86_64.exe /userlevel=1 /S /FORCE /D=%PREFIX%
+cmake --build build --target install --config Release --parallel %CPU_COUNT%
 if errorlevel 1 exit 1
 
+ctest --test-dir build -R pyinstallcheck --output-on-failure --timeout 100 -j%CPU_COUNT% -E TabuList
+if errorlevel 1 exit 1
