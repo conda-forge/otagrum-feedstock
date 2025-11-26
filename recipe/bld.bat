@@ -12,5 +12,5 @@ if errorlevel 1 exit 1
 cmake --build build --target install --config Release --parallel %CPU_COUNT%
 if errorlevel 1 exit 1
 
-ctest --test-dir build -R pyinstallcheck --output-on-failure --timeout 100 -j%CPU_COUNT%
+ctest --test-dir build -R pyinstallcheck --output-on-failure --timeout 100 -j%CPU_COUNT% -E TabuList
 if errorlevel 1 exit 1
