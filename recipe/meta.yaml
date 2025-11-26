@@ -10,9 +10,11 @@ source:
   sha256: 41f3a706fd9fc9ba073052b291f382cd2d080a3a2d8f4bec6e04edd02f5fd92d
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('otagrum', max_pin='x.x') }}
+  python_version_independent: true  # [is_abi3]
+  skip: True  # [is_abi3 and not is_python_min]
 
 requirements:
   build:
@@ -26,18 +28,21 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
+    - python-abi3  # [is_abi3]
     - python
     - openturns
     - libcblas
     - pyagrum
   run:
     - python
-    - openturns
-    - pyagrum
 
 test:
+  requires:
+    - abi3audit  # [is_abi3]
   imports:
     - otagrum
+  commands:
+    - abi3audit $SP_DIR/otagrum/_otagrum.so -s -v --assume-minimum-abi3 3.10  # [unix and is_abi3]
 
 about:
   home: http://openturns.org/
