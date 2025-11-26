@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# RuntimeError: std::bad_cast on osx in FromPotential
-sed -i'.bak' "s|dynamic_cast|static_cast|g" lib/src/Utils.cxx
-
 cmake ${CMAKE_ARGS} \
   -DCMAKE_PREFIX_PATH=${PREFIX} \
   -DCMAKE_INSTALL_PREFIX=${PREFIX} \
@@ -10,7 +7,7 @@ cmake ${CMAKE_ARGS} \
   -DCMAKE_UNITY_BUILD=ON \
   -DPython_FIND_STRATEGY=LOCATION \
   -DPython_ROOT_DIR=${PREFIX} \
-  -B build -S .
+  -B build .
 
 cmake --build build --target install --parallel ${CPU_COUNT}
 
