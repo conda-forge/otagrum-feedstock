@@ -16,6 +16,7 @@ cmake ${CMAKE_ARGS} \
   -DCMAKE_UNITY_BUILD=ON \
   -DPython_FIND_STRATEGY=LOCATION \
   -DPython_ROOT_DIR=${PREFIX} \
+  -DSWIG_COMPILE_FLAGS="-O1 -DPy_LIMITED_API=0x030A0000" -DUSE_PYTHON_SABI=ON \
   -B build .
 
 cmake --build build --target install --parallel ${CPU_COUNT}
