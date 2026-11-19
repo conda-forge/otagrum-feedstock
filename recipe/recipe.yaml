@@ -1,5 +1,5 @@
 context:
-  version: "0.14"
+  version: "0.15"
 
 package:
   name: otagrum
@@ -7,12 +7,14 @@ package:
 
 source:
   url: https://github.com/openturns/otagrum/archive/v${{ version }}.tar.gz
-  sha256: f05655545d94f01c602e3c9f2077452d327c2880253eaffe5594ca146ee33292
+  sha256: cf30a7002e6ddabd015b00368074904dbd315535b7f0d2217998c3f9b6e77e73
 
 build:
   number: 0
   python:
     version_independent: true
+  skip:
+    - win
 
 requirements:
   build:

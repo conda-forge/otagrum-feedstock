@@ -23,5 +23,5 @@ cmake --build build --target install --parallel ${CPU_COUNT}
 
 if test "$CONDA_BUILD_CROSS_COMPILATION" != "1"
 then
-  ctest --test-dir build -R pyinstallcheck --output-on-failure -j${CPU_COUNT} -E TabuList
+  ctest --test-dir build -R pyinstallcheck --output-on-failure -j${CPU_COUNT}
 fi
